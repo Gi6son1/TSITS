@@ -2,16 +2,42 @@
 This game (The Shotgun In The Stone) will be a created using the libgdx engine and will be programmed using JAVA.
 The link to the development powerpoint: https://prifysgolaber-my.sharepoint.com/:p:/g/personal/owg5_aber_ac_uk/EU8KgPhGeB9AmNOIrYOhHnkBZ0BCoo3hGhKc6qbDzckjIQ?e=teH4uy
 
-TO START:
-1. Download project .zip into folder of your choice
-2. Download git and learn how it works.
-3. The way you contribute to someone's else repo is to use something called a fork. You can find the option at the top right corner of the root page of any repo on github.
-4. Clone your forked repo (not mine, but your own versiion)
+Git commands
 
-When you fork a repo , you create a copy of that repo for yourself. 
+   | Add files
 
-3. Once linked, you can now access online repo, pull other user's updates, push changes etc.
-4. To open in intellij, you can choose to open the build.gradle file and select “Open as Project” to get started.
+   --> git add -all
+
+   | Commit your changes
+
+   --> git commit -m "[enter message]"
+   
+   | See what files have been changed since last PUSH
+   
+   --> git status
+
+   | Push your changes
+
+   --> git push origin main
+
+   | Create new branch and move into that branch
+
+   --> git checkout -b "[new branch name]"
+
+   | Move between branches
+
+   --> git checkout [branch name]
+
+   | Merge CURRENT branch with other branch
+
+   --> git merge [other branch name]
+
+   | Check branches and which one your on
+
+   --> git branch
+
+
+ To open in intellij, you can choose to open the build.gradle file and select “Open as Project” to get started.
    --> There are different build.gradle files in different folders, you need to select the build file that is in the root directory (not in any sub-folder but in main directory).
 
 Libraries that have been added in: (add more as you need)
@@ -41,4 +67,3 @@ https://github.com/kotcrab/vis-ui
 
 --> jbump: A 2D AABB collision detection and response library.
 https://github.com/tommyettinger/jbump
-
