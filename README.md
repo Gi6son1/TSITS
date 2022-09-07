@@ -5,33 +5,10 @@ The link to the development powerpoint: https://prifysgolaber-my.sharepoint.com/
 TO START:
 1. Download project .zip into folder of your choice
 2. Download git and learn how it works.
-2. Use git to link up local folder location to online repo
+3. The way you contribute to someone's else repo is to use something called a fork. You can find the option at the top right corner of the root page of any repo on github.
+4. Clone your forked repo (not mine, but your own versiion)
 
-   | Initialize the local directory as a Git repository.
-
-   --> git init
-
-   | Add files
-
-   --> git add -all
-
-   | Commit your changes
-
-   --> git commit -m "First commit"
-
-   | Add remote origin
-
-   --> git remote add origin [Remote repository URL]
-
-   [Remote repository URL] looks like: https://github.com/user/repo.git
-
-   | Verifies the new remote URL
-
-   --> git remote -v
-
-   | Push your changes
-
-   --> git push origin master
+When you fork a repo , you create a copy of that repo for yourself. 
 
 3. Once linked, you can now access online repo, pull other user's updates, push changes etc.
 4. To open in intellij, you can choose to open the build.gradle file and select “Open as Project” to get started.
