@@ -12,9 +12,6 @@ public class Game extends ApplicationAdapter {
 	SpriteBatch batch;
 	PlayerCharacter playerCharacter;
 	private OrthographicCamera camera;
-
-	private int xMovement = 0;
-	private int yMovement = 0;
 	
 	@Override
 	public void create () {
@@ -29,7 +26,7 @@ public class Game extends ApplicationAdapter {
 	public void render () {
 		ScreenUtils.clear(1, 1, 1, 1);
 
-		checkPlayerMovement();
+		playerCharacter.trackPlayerMovement();
 
 		camera.update();
 		batch.setProjectionMatrix(camera.combined);
@@ -40,40 +37,7 @@ public class Game extends ApplicationAdapter {
 
 	}
 
-	private void checkPlayerMovement(){
-		if(Gdx.input.isKeyPressed(Input.Keys.A)){
-			playerCharacter.xPos -= playerCharacter.getBaseMoveSpeed() * Gdx.graphics.getDeltaTime();
-			if (playerCharacter.isFacingRight()){
-				playerCharacter.flipSkinX();
-			}
-			xMovement = -1;
-		}
-		else {xMovement = 0;}
 
-		if(Gdx.input.isKeyPressed(Input.Keys.D)){
-			playerCharacter.xPos += playerCharacter.getBaseMoveSpeed() * Gdx.graphics.getDeltaTime();
-			if (!playerCharacter.isFacingRight()){
-				playerCharacter.flipSkinX();
-			}
-			xMovement = 1;
-		}
-
-		if(Gdx.input.isKeyPressed(Input.Keys.W)){
-			playerCharacter.yPos += playerCharacter.getBaseMoveSpeed() * Gdx.graphics.getDeltaTime();
-			yMovement = 1;
-		}
-		else {yMovement = 0;}
-
-		if(Gdx.input.isKeyPressed(Input.Keys.S)){
-			playerCharacter.yPos -= playerCharacter.getBaseMoveSpeed() * Gdx.graphics.getDeltaTime();
-			yMovement = -1;
-		}
-
-		else if(Gdx.input.isKeyJustPressed(Input.Keys.SPACE) && playerCharacter.canDodge()){
-			playerCharacter.isDodging = true;
-		}
-
-	}
 
 	@Override
 	public void dispose () {
