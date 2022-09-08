@@ -10,8 +10,8 @@ import com.badlogic.gdx.utils.ScreenUtils;
 
 public class Game extends ApplicationAdapter {
 	SpriteBatch batch;
-	PlayerCharacter playerCharacter;
-	private OrthographicCamera camera;
+	PlayerCharacter playerCharacter; //this holds the player character object
+	private OrthographicCamera camera; //camera
 	
 	@Override
 	public void create () {
@@ -23,17 +23,16 @@ public class Game extends ApplicationAdapter {
 	}
 
 	@Override
-	public void render () {
-		ScreenUtils.clear(1, 1, 1, 1);
+	public void render () { //called continuously every frame
+		ScreenUtils.clear(1, 1, 1, 1); //set window colour to white
 
-		playerCharacter.trackPlayerMovement();
+		playerCharacter.trackPlayerMovement(); //method that allows user to control player movement
 
-		camera.update();
+		camera.update(); //camera updates every frame
 		batch.setProjectionMatrix(camera.combined);
 		batch.begin();
-		batch.draw(playerCharacter.sprite, (int)playerCharacter.xPos, (int)playerCharacter.yPos);
+		batch.draw(playerCharacter.sprite, (int)playerCharacter.xPos, (int)playerCharacter.yPos); //draws playerCharacter on screen depending on their movement
 		batch.end();
-
 
 	}
 
