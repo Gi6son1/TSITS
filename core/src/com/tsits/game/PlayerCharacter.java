@@ -14,8 +14,9 @@ public class PlayerCharacter {
     //these are updated and passed to Game class for drawing
     public float xPos;
     public float yPos;
+    float rotation = 0f;
 
-    private Weapon shotNette;
+    public Weapon weapon;
 
     private float stamina;
     private float maxStamina;
@@ -39,8 +40,11 @@ public class PlayerCharacter {
     public PlayerCharacter() {
         this.skin = new Texture("manny.png");
         this.sprite = new Sprite(skin);
+        this.sprite.setOrigin(sprite.getWidth() * 0.8f, sprite.getHeight()/2 - 30f);
+        this.sprite.setCenterX(sprite.getWidth() * 0.8f);
         this.xPos = 600; //starting point on window
         this.yPos = 310;
+        this.weapon = new Weapon(xPos, yPos);
 
         this.baseMoveSpeed = 150.0f;
         this.facingRight = false;
@@ -51,7 +55,8 @@ public class PlayerCharacter {
     }
 
     public void trackPlayerMovement() { //used in game class
-        Gdx.app.log("Stamina", String.valueOf(stamina)); //display stamina on console for debugging
+        //Gdx.app.log("Stamina", String.valueOf(stamina)); //display stamina on console for debugging
+        weapon.updatePositon(xPos, yPos);
 
         if (!isDodging) { //if player isn't in the middle of dodge, they can move around
             controlPlayer();
