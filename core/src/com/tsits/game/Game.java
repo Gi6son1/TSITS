@@ -30,8 +30,15 @@ public class Game extends ApplicationAdapter {
 
 		camera.update(); //camera updates every frame
 		batch.setProjectionMatrix(camera.combined);
+
 		batch.begin();
-		batch.draw(playerCharacter.sprite, (int)playerCharacter.xPos, (int)playerCharacter.yPos); //draws playerCharacter on screen depending on their movement
+		playerCharacter.sprite.draw(batch);
+		playerCharacter.sprite.setPosition((int)playerCharacter.xPos, (int)playerCharacter.yPos); //draws playerCharacter on screen depending on their movement);
+
+		playerCharacter.weapon.sprite.draw(batch);
+		playerCharacter.weapon.sprite.setPosition((int)playerCharacter.weapon.xPos, (int)playerCharacter.weapon.yPos);
+		playerCharacter.weapon.sprite.setRotation(playerCharacter.weapon.rotation);
+
 		batch.end();
 
 	}
