@@ -38,7 +38,7 @@ public class Game extends ApplicationAdapter {
 		playerCharacter.weapon.sprite.draw(batch);
 		playerCharacter.weapon.sprite.setPosition((int)playerCharacter.weapon.xPos, (int)playerCharacter.weapon.yPos);
 		playerCharacter.weapon.sprite.setRotation(playerCharacter.weapon.rotation);
-
+		//TODO fix this
 		batch.end();
 
 	}
