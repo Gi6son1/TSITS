@@ -1,46 +1,45 @@
-package com.tsits.menu;
+package com.tsits.screens;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.utils.ScreenUtils;
-import com.tsits.gamescreen.GameScreen;
-import com.tsits.thing.Tsits;
+import com.tsits.screenhandler.Tsits;
 
-public class MainMenuScreen implements Screen {
+public class LoadingScreen implements Screen {
 
     final Tsits game;
-    Texture img;
-    OrthographicCamera camera;
+    public Texture img;
+    public OrthographicCamera camera;
 
-    public MainMenuScreen(final Tsits game) {
+    public LoadingScreen(final Tsits game) {
         this.game = game;
-
+        img = new Texture("loadingscreen.jpg");
         camera = new OrthographicCamera();
-        camera.setToOrtho(false, 800, 480);
-        img = new Texture("donkey.jpg");
-    }
-
-    public void render(float delta) {
-        ScreenUtils.clear(0, 0, 0.2f, 1);
-
-        camera.update();
-        game.batch.begin();
-        game.font.draw(game.batch, "Welcome to...", 100, 450);
-        game.font.draw(game.batch, "The Shotgun In The Stone!", 100, 400);
-        game.batch.draw(img, 0 ,0);
-        game.batch.end();
-
-        if (Gdx.input.isTouched()) {
-            game.setScreen(new GameScreen(game));
-            dispose();
-        }
+        camera.setToOrtho(false, 1280, 720);
     }
 
     @Override
     public void show() {
 
+    }
+
+    @Override
+    public void render(float delta) {
+        ScreenUtils.clear(0, 0.2f, 0, 1);
+
+        camera.update();
+        game.batch.begin();
+        game.batch.draw(img, 0 ,0);
+        game.font.draw(game.batch, "Game Loaded.", 100, 600);
+        game.font.draw(game.batch, "Press 'Enter' to continue.", 100, 500);
+        game.batch.end();
+
+        if (Gdx.input.isKeyJustPressed(66)) { //Changes screen to menu when enter pressed
+            game.changeScreen(0);
+            dispose();
+        }
     }
 
     @Override
@@ -65,6 +64,5 @@ public class MainMenuScreen implements Screen {
 
     @Override
     public void dispose() {
-
     }
 }

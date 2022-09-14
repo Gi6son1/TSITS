@@ -2,7 +2,7 @@ package com.tsits.game;
 
 import com.badlogic.gdx.backends.lwjgl3.Lwjgl3Application;
 import com.badlogic.gdx.backends.lwjgl3.Lwjgl3ApplicationConfiguration;
-import com.tsits.thing.Tsits;
+import com.tsits.screenhandler.Tsits;
 
 // Please note that on macOS your application needs to be started with the -XstartOnFirstThread JVM argument
 public class DesktopLauncher {
@@ -10,7 +10,7 @@ public class DesktopLauncher {
 		Lwjgl3ApplicationConfiguration config = new Lwjgl3ApplicationConfiguration();
 		config.setTitle("TSITS");
 
-		config.setWindowedMode(800, 480);
+		config.setWindowedMode(1280, 720);
 
 		//Syncs the frames to run at 60fps on all but the crappiest of systems.
 		config.useVsync(true);
