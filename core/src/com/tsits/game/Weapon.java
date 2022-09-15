@@ -9,7 +9,7 @@ import com.badlogic.gdx.math.Vector2;
 
 public class Weapon {
     private Texture skin;
-    Sprite sprite;
+    public Sprite sprite;
 
     public float xPos;
     public float yPos;

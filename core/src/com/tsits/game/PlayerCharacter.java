@@ -10,7 +10,7 @@ import java.awt.geom.Point2D;
 
 public class PlayerCharacter {
     private Texture skin;
-    Sprite sprite; //sprite object for drawing onto window
+    public Sprite sprite; //sprite object for drawing onto window
 
     //these are updated and passed to Game class for drawing
     public float xPos;
