@@ -23,7 +23,7 @@ public class Weapon {
         this.skin = new Texture("mannysmachete.png");
         this.sprite = new Sprite(skin);
         this.sprite.setOrigin(sprite.getWidth()-15f, sprite.getHeight()/2 + 5);
-        this.sprite.setCenter();
+        //this.sprite.setCenter();
         updatePositon(xPos, yPos);
         rotation = 0f;
     }

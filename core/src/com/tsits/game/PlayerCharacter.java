@@ -4,6 +4,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
+import com.badlogic.gdx.math.Vector2;
 
 import java.awt.geom.Point2D;
 
@@ -40,6 +41,7 @@ public class PlayerCharacter {
     public PlayerCharacter() {
         this.skin = new Texture("manny.png");
         this.sprite = new Sprite(skin);
+
         this.sprite.setOrigin(sprite.getWidth() * 0.8f, sprite.getHeight()/2 - 30f);
         this.sprite.setCenterX(sprite.getWidth() * 0.8f);
         this.xPos = 600; //starting point on window
