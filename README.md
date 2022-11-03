@@ -1,4 +1,8 @@
 "# TSINS Project"
+
+CURRENTLY IN DEVELOPMENT 
+
+
 This game (The Shotgun In The Stone) will be a created using the libgdx engine and will be programmed using JAVA.
 The link to the development powerpoint: https://prifysgolaber-my.sharepoint.com/:p:/g/personal/owg5_aber_ac_uk/EU8KgPhGeB9AmNOIrYOhHnkBZ0BCoo3hGhKc6qbDzckjIQ?e=teH4uy
 
